@@ -1,24 +1,22 @@
-# 🛠️ Python Automation Script - File Organizer
+# 🤖 Python Automation Script
 
-This project is a simple but effective Python script to automatically organize files in a folder by type (e.g., images, documents, archives, etc.).
+A collection of Python scripts to automate common tasks like organizing files, sending emails, and scraping websites. Great for learning and real-world usage!
 
-## 🚀 Features
+---
 
-- Categorizes files by extension
-- Creates folders automatically (e.g., Images, Documents, Archives, etc.)
-- Cross-platform (Windows, macOS, Linux)
-- Lightweight and no dependencies
+## 📦 Contents
 
-## 📁 Example Categories
+| Script            | Description                              |
+|-------------------|------------------------------------------|
+| `file_organizer.py` | Organizes files in folders by file type |
+| `email_sender.py`   | Sends automated emails via SMTP         |
+| `web_scraper.py`    | Scrapes top headlines from Hacker News  |
 
-- Images: `.jpg`, `.png`, `.gif`
-- Documents: `.pdf`, `.docx`, `.txt`
-- Archives: `.zip`, `.rar`, `.tar`
-- Scripts: `.py`, `.sh`, `.js`, etc.
+---
 
-## 🧩 How to Use
+## 🚀 How to Use
 
-### 1. Clone the repository
+### 🔧 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/python-automation-script.git
