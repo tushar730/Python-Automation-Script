@@ -1,8 +1,10 @@
 import smtplib
 import os
+import argparse
 from email.message import EmailMessage
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
 def send_email(subject, body, to_email, html=False, attachments=None, cc=None, bcc=None):
@@ -15,12 +17,13 @@ def send_email(subject, body, to_email, html=False, attachments=None, cc=None, b
     if bcc:
         msg['Bcc'] = bcc
 
+    # Adding the email body (HTML or plain text)
     if html:
         msg.add_alternative(body, subtype='html')
     else:
         msg.set_content(body)
 
-    # Add attachments
+    # Adding attachments (if any)
     if attachments:
         for file_path in attachments:
             try:
@@ -39,14 +42,7 @@ def send_email(subject, body, to_email, html=False, attachments=None, cc=None, b
     except Exception as e:
         print(f"❌ Failed to send email: {e}")
 
-# Example usage
-if __name__ == "__main__":
-    send_email(
-        subject="🚀 Python Automation Email",
-        body="<h2>Hello from Python!</h2><p>This is an automated email.</p>",
-        to_email="recipient@example.com",
-        html=True,
-        attachments=["assets/sample_output/news.csv"],
-        cc="someone@example.com",
-        bcc="hidden@example.com"
-    )
+def main():
+    parser = argparse.ArgumentParser(description="Send an email using Gmail's SMTP server.")
+    parser.add_argument("to", help="Recipient's email address")
+    parser.add_argument("subj_
